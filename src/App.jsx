@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { animateWaves } from "./g";
+import { animateWaves } from "./g.js";
 
 
 
@@ -13,7 +13,7 @@ return (
 
 
  <svg
-  className="absolute bottom-0 left-1/2 -translate-x-1/2 z-0 pointer-events-none"
+  className="absolute bottom-0 left-1/2 -translate-x-1/2 z-0 "
   width="900"
   height="500"
   viewBox="0 0 900 500"
@@ -55,9 +55,10 @@ return (
 
   <path
     d="M 100 600 C 200 110, 700 110, 800 550"
-    stroke="#5A70B3"
+    stroke="black"
     strokeWidth="8"
     stroke-linecap="round"
+   
     opacity="1"
     filter="url(#upperGlow)"
     fill="none"
@@ -72,7 +73,7 @@ return (
     opacity="1"
     filter="url(#heavyGlow)"
     mask="url(#bottomGlowMask)"
-    fill="none"
+    fill="black"
   />
 
 <path
@@ -98,7 +99,7 @@ return (
 
   <path
     d="M 100 600 C 200 110, 700 110, 800 550"
-    stroke="url(#strokeGrad)"
+    stroke=""
     strokeWidth="1"
     stroke-linecap="round"
     opacity="1"
@@ -108,12 +109,12 @@ return (
 
       <div>
       <div className="relative z-10  opacity-100 p-5 text-2xl font-light text-gray-600  w-[23rem] h-[31rem] pt-14  rounded-4xl bg-white/10 backdrop-blur-[2px]
-border boder-white/10
-before:content-[' '] 
-before:absolute
-before:insert-0
-before:border
-before:border-blue/10  ">
+                    border boder-white/10
+                    before:content-[' '] 
+                    before:absolute
+                    before:insert-0
+                    before:border
+                    before:border-blue/10  ">
   
       <p className="text-gray-400">Hey, GBT, I need your help on</p>
       <p className="text-gray-400">one of my new project </p>
@@ -139,6 +140,7 @@ before:border-blue/10  ">
       width="20"
       height="20"
       patternUnits="userSpaceOnUse"
+    
     >
       <circle cx="2" cy="2" r="1.2" fill="#93c5fd" />
     </pattern>
@@ -162,36 +164,36 @@ before:border-blue/10  ">
     fill="url(#dots)"
     mask="url(#middleMask)"
     opacity="0.20"
+    
   />
 </svg>
 
 
 
 
-
- <svg
+<svg
+  id="waveArea"  
   viewBox="0 -10 1460 320"
-  className="absolute top-1/2 left-0 w-full -translate-y-1/2 pointer-events-none"
+  className="absolute top-1/2 left-0 w-full -translate-y-1/2"
   fill="none"
 >
 
-    <path
-      id="wave1"
-      d="
-        M 0 160
-        C 220 -10, 460 330, 720 160
-        C 980 -10, 1220 330, 1440 160
-      "
-      stroke="rgba(255,255,255,0.95)"
-      strokeWidth="7"
-      strokeLinecap="round"
-    />
- 
-
-
- 
   <path
-  id="wave2"
+    id="wave1"
+    d="
+      M 0 160
+      C 220 -10, 460 330, 720 160
+      C 980 -10, 1220 330, 1440 160
+    "
+    stroke="rgba(255,255,255,0.95)"
+    strokeWidth="7"
+    strokeLinecap="round"
+    fill="url(#dots)"
+  />
+
+
+  <path
+    id="wave3"
     d="
       M 16 165
       C 220 340, 500 -0, 720 165
@@ -200,46 +202,16 @@ before:border-blue/10  ">
     stroke="rgba(96,165,250,0.65)"
     strokeWidth="7"
     strokeLinecap="round"
+    fill="url(#dots)"
   />
-
-   <path
-   id="wave3"
-    d="
-      M 16 165
-      C 220 340, 500 -0, 720 165
-      C 940 340, 1180 -40, 1440 165
-    "
-    stroke="rgba(96,165,250,0.65)"
-    strokeWidth="7"
-    strokeLinecap="round"
-  />
-
-
-
-  
-  <path
-  id="wave4"
-    d="
-      M 0 170
-      C 240 40, 480 300, 720 170
-      C 960 40, 1200 300, 1440 170
-    "
-    stroke="rgba(96,165,250,0.35)"
-    strokeWidth="4"
-    strokeLinecap="round"
-  />
-
 
   <path
-  id="wave5"
-    d="
-      M 0 150
-      C 300 320, 540 -20, 720 150
-      C 900 320, 1140 -20, 1440 150
-    "
-    stroke="rgba(96,165,250,0.25)"
-    strokeWidth="4"
+    id="string"   
+    d="M 0 160 L 1440 160"
+    stroke="rgba(255,255,255,0.6)"
+    strokeWidth="1.5"
     strokeLinecap="round"
+    fill="none"
   />
 </svg>
             <div className="flex justify-center items-center mt-3.5 ">
